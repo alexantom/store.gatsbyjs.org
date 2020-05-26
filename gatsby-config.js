@@ -3,8 +3,10 @@ require('dotenv').config({
 });
 
 module.exports = {
+  pathPrefix: process.env.PATH_PREFIX ? `/${process.env.PATH_PREFIX}` : '/',
   siteMetadata: {
     siteUrl: 'https://store.gatsbyjs.org',
+    shopifyStoreUrl: `https://${process.env.SHOPIFY_STORE}.myshopify.com`,
     title: 'Holy buckets! Get your Gatsby swag here!',
     description:
       'Do you like spaced-out socks? All purple everything? Hitting #maximumcomf with JAMstack Jammies? Oh boy have we got the swag store for you!'
@@ -16,11 +18,12 @@ module.exports = {
         component: require.resolve(`./src/components/Layout/`)
       }
     },
-    'gatsby-transformer-sharp',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-source-shopify',
       options: {
-        shopName: 'gatsby-swag',
+        shopName: process.env.SHOPIFY_STORE,
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN
       }
     },
@@ -42,7 +45,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-93349937-6',
+        trackingId: 'UA-93349937-6SFD',
         respectDNT: true
       }
     }

@@ -9,6 +9,7 @@ export default () => (
         site {
           siteMetadata {
             siteUrl
+            shopifyStoreUrl
             title
             description
           }
@@ -17,13 +18,13 @@ export default () => (
     `}
     render={({
       site: {
-        siteMetadata: { siteUrl, title, description }
+        siteMetadata: { siteUrl, title, description, shopifyStoreUrl }
       }
     }) => (
       <Helmet defaultTitle={title} titleTemplate={`%s · ${title}`}>
         <html lang="en" />
 
-        <link rel="preconnect" href="https://gatsby-swag.myshopify.com" />
+        <link rel="preconnect" href={shopifyStoreUrl} />
         <link rel="preconnect" href="https://api.gatsbyjs.org" />
 
         <link rel="canonical" href={siteUrl} />
