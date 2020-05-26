@@ -6,6 +6,7 @@ console.log(
   process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
   'Shopify Creds'
 );
+console.log(process.env);
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX ? `/${process.env.PATH_PREFIX}` : '/',
