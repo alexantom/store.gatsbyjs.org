@@ -1,10 +1,12 @@
-require('dotenv').config();
-
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
 console.log(
-  process.env.SHOPIFY_STORE,
-  process.env.SHOPIFY_ACCESS_TOKEN,
+  process.env.GATSBY_SHOPIFY_STORE,
+  process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
   'Shopify Creds'
 );
+
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX ? `/${process.env.PATH_PREFIX}` : '/',
   siteMetadata: {
@@ -26,8 +28,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-shopify',
       options: {
-        shopName: process.env.SHOPIFY_STORE,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN
+        shopName: process.env.GATSBY_SHOPIFY_STORE,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN
       }
     },
     'gatsby-plugin-react-helmet',
