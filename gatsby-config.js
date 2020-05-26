@@ -1,6 +1,10 @@
 require('dotenv').config();
 
-console.log(process.env);
+console.log(
+  process.env.SHOPIFY_STORE,
+  process.env.SHOPIFY_ACCESS_TOKEN,
+  'Shopify Creds'
+);
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX ? `/${process.env.PATH_PREFIX}` : '/',
   siteMetadata: {
