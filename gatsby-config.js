@@ -12,7 +12,7 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX ? `/${process.env.PATH_PREFIX}` : '/',
   siteMetadata: {
     siteUrl: 'https://store.gatsbyjs.org',
-    shopifyStoreUrl: `https://${process.env.SHOPIFY_STORE}.myshopify.com`,
+    shopifyStoreUrl: `https://${process.env.GATSBY_SHOPIFY_STORE}.myshopify.com`,
     title: 'Holy buckets! Get your Gatsby swag here!',
     description:
       'Do you like spaced-out socks? All purple everything? Hitting #maximumcomf with JAMstack Jammies? Oh boy have we got the swag store for you!'
