@@ -41,7 +41,7 @@ module.exports = {
         icon: 'static/android-chrome-512x512.png'
       }
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
