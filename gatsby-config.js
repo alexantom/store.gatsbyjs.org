@@ -41,8 +41,8 @@ module.exports = {
         icon: 'static/android-chrome-512x512.png'
       }
     },
-    // 'gatsby-plugin-offline',
-    'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-offline',
+    // 'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
